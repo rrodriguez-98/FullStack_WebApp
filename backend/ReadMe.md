@@ -1,5 +1,5 @@
 npm init -y
-npm install express mongoose dotenv ejs
+npm install express mongoose dotenv ejs bcrypt
 
 npm install --save-dev nodemon
 add script

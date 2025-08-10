@@ -10,8 +10,7 @@ const bcrypt = require('bcrypt');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-// For Vercel deployment
-module.exports = app;
+
 
 /****************************USE/SET METHODS**************************************/
 //Middleware
@@ -233,4 +232,7 @@ app.use((err, req, res, next) => {
     res.status(500).send(`<h1>Server Error</h1><p>${err.message}</p>`);
 });
 
+
+// For Vercel deployment
+module.exports = app;
 
