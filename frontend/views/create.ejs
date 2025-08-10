@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body class="p-4">
+    <div class="container">
+        <h2>Add a New Recipe to <%= channel %></h2>
+        <form method="POST" action="/create?channel=<%= channel %>">
+            <div class="mb-3">
+                <label>Recipe Title</label>
+                <input type="text" name="recipeName" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label>Tags <em class="red-font">(Enter comma separated values)</em></label>
+                <input type="text" name="tag" class="form-control" placeholder="dessert">
+            </div>
+            <div class="mb-3">
+                <label>Ingredients <em class="red-font">(Enter comma separated values)</em></label>
+                <input type="text" name="ingredients" class="form-control" placeholder="flour, sugar, eggs" required>
+            </div>
+            <div class="mb-3">
+                <label>Recipe Steps <em class="red-font">(Enter one step per line)</em></label>
+                <div>
+                    <textarea class="form-control" name="recipeSteps" id="steps" rows="6" placeholder="Step 1&#10;Step 2&#10;Step 3" required></textarea>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-success">Add Recipe</button>
+        </form>
+        <a href="/dashboard" class="btn btn-secondary mt-3">Back to recipes</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "watch": [
+    "./",
+    "../frontend/views",
+    "../frontend/public"
+  ],
+  "ext": "js,json,ejs,css,html",
+  "exec": "node app.js"
+}

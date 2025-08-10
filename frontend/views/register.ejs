@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body class="center">
+    <section class="signup-container">
+           <!-- <div class='display-3 text-center heading-container my-4'>Sign Up</div> -->
+            <div class='display-4 text-center font-white my-4'>Create an account</div>
+            <section class="signup-field-input">
+                <form method="POST" action="/newUser">
+                    <section class="signup-field-single-input">
+                        <label for="name">Name</label>
+                        <input class="form-control" type="text" id="name" name="name" required/>
+                    </section>
+                    <section class="signup-field-single-input py-2">
+                        <label for="name">User Name</label>
+                        <input class="form-control" type="text" id="user-name" name="userName" required/>
+                    </section>
+                    <section class="signup-field-single-input py-2">
+                        <label for="email">Email Address</label>
+                        <input class="form-control" type="email" id="email" name="email" required/>
+                    </section>
+                    <section class="signup-field-single-input py-2">
+                        <label for="password">Password</label>
+                        <input class="form-control" type="password" id="password" name="password" required/>
+                    </section>
+                    <section class="signup-field-single-input py-2">
+                        <label for="confirm-password">Confirm Password</label>
+                        <input class="form-control" type="password" id="confirm-password" name="confirm_password" required/>
+                    </section>
+                    
+                    <label class=" checkbox-conditions">
+                        <input type="checkbox" name="terms_conditions" value="agree" required/>
+                        <span class='mx-3 font-white'>
+                            I agree to the Terms of Service
+                        </span>
+                    </label>
+                    <div class="center p-3">
+                        <button class="sign-up">Sign Up</button>
+                    </div>         
+                </form>
+                
+            </section>
+            <section class="center">
+                <a href="/" class="back-to-login">Already have an account? Login here</a> 
+            </section>
+               
+        </section>
+        <!-- Error message display -->
+         <section class="p-3">
+            <% if (typeof error1 !== 'undefined' && error1) { %>
+            <div class="alert alert-danger" role="alert">
+                <%= error1 %>
+            </div>
+        <% } %>
+        <% if (typeof error2 !== 'undefined' && error2) { %>
+            <div class="alert alert-danger" role="alert">
+                <%= error2 %>
+            </div>
+        <% } %>
+        <% if (typeof error3 !== 'undefined' && error3) { %>
+            <div class="alert alert-danger" role="alert">
+                <%= error3 %>
+            </div>
+        <% } %>
+        <% if (typeof error4 !== 'undefined' && error4) { %>
+            <div class="alert alert-danger" role="alert">
+                <%= error4 %>
+            </div>
+        <% } %>
+        <% if (typeof error5 !== 'undefined' && error5) { %>
+            <div class="alert alert-danger" role="alert">
+                <%= error5 %>
+            </div>
+        <% } %>
+         </section>
+        
+</body>
+</html>
