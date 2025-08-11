@@ -66,6 +66,7 @@ app.get('/dashboard', async (req, res, next) => {
     }
     else{
       channel = 'main';
+      filter.forumSection = channel;
     }
 
     const recipes = await Recipe.find(filter);
