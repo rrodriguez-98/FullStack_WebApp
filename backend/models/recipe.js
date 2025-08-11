@@ -27,9 +27,12 @@ const recipeSchema = new mongoose.Schema({
         enum: ['main', '5 Ingredients or Less', 'Heirloom Recipes', 'Cultural Wonders'],
         default: 'main'
     },
-    comments: {
-        type: [String]
-    },
+    comments: [
+        {
+        text: String,
+        author: String
+    }
+    ],
     replies: {
         type: Number,
         default: 0

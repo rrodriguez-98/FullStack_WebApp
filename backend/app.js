@@ -217,8 +217,11 @@ app.post('/login', async (req, res) =>{
 //Handle comments
 app.post('/comment/:id', async (req, res, next) => {
     try{
-        //await Recipe.findByIdAndUpdate(req.params.id, req.body);
-        await Recipe.findByIdAndUpdate(req.params.id, { $push: { comments: req.body.comments }});
+        const commentData = {
+            text: req.body.comments,
+            author: req.session.userName // store the logged-in user
+        };
+        await Recipe.findByIdAndUpdate(req.params.id, { $push: { comments: commentData }});
         res.redirect(`/recipe/${req.params.id}`);
     } catch (err){
         next(err);

@@ -56,8 +56,8 @@
                 <% if (recipe.comments) { %>
                     <% recipe.comments.forEach(item => { %>
                         <section class="comment-item">
-                            <p><%= item %></p>
-                            <p class="comment-author">👨‍🍳 by <%= user %></p> 
+                            <p><%= item.text %></p>
+                            <p class="comment-author">👨‍🍳 by <%= item.author %></p> 
                         </section>
                     <% }); %>   
                 <% } %>
