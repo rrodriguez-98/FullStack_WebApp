@@ -1,0 +1,8 @@
+{
+    "name": "heroku-wrapper",
+    "private": true,
+    "scripts":{
+        "start": "npm --prefix backend start",
+        "heroku-postbuild": "npm --prefix backend install"
+    }
+}
