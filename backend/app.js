@@ -32,9 +32,9 @@ app.use((req, res, next) => {
 app.set('view engine', 'ejs');
 app.set('views',path.join(__dirname, '..', 'frontend', 'views'));
 app.use(express.static(path.join(__dirname, '..', 'frontend', 'public')));
-// app.listen(PORT, () => {
-//   console.log(`Recipe app running at http://localhost:${PORT}`);
-// });
+app.listen(PORT, () => {
+  console.log(`Recipe app running at http://localhost:${PORT}`);
+});
 /****************************GET METHODS*****************************************/
 //Home View
 app.get('/', (req, res) => {
@@ -234,5 +234,5 @@ app.use((err, req, res, next) => {
 
 
 // For Vercel deployment
-module.exports = app;
+// module.exports = app;
 
