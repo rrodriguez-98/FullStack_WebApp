@@ -30,7 +30,7 @@ const recipeSchema = new mongoose.Schema({
     comments: [
         {
         text: String,
-        author: String
+        author: { type: String, required: false }
     }
     ],
     replies: {
@@ -45,10 +45,10 @@ const recipeSchema = new mongoose.Schema({
         type: String,
         default: '30 min'
     },
-    tag: [{
+    tag: {
         type: [String],
         trim: true
-    }],
+    },
     imageUrl: {
         type: String,
         default: ''

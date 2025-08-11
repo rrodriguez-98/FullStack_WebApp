@@ -57,9 +57,9 @@
           <div class="card-body d-flex flex-column">
             <h5 class="card-title"><%= recipe.recipeName %></h5>
             <p class="card-text flex-grow-1">Duration: <%= recipe.duration %></p>
-              <% if (recipe.tag[0] ) { %>
+              <% if (recipe.tag) { %>
                 <section class="display-tags">
-                  <% recipe.tag[0].forEach(item => { %>
+                  <% recipe.tag.forEach(item => { %>
                       <span class="tag"><%= item %></span>
                   <% }); %> 
                 </section> 

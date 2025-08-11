@@ -78,6 +78,9 @@ app.get('/dashboard', async (req, res, next) => {
 
 //Redirect to "Create a New Recipe" page
 app.get('/create', (req, res) =>{
+    if (!req.session.userName) {
+      return res.status(401).send('You must be logged in to create a recipe.');
+    }
     const { channel } = req.query;
     res.render('create', { title: 'Create', channel });
 });
@@ -103,10 +106,10 @@ app.post('/create', async (req, res, next) => {
                 .map(i => i.trim())
                 .filter(i => i);
         
-        // req.body.tag = req.body.tag                 // split tags by commas
-        //         .split(',')
-        //         .map(i => i.trim())
-        //         .filter(i => i);
+        req.body.tag = req.body.tag                 // split tags by commas
+                .split(',')
+                .map(i => i.trim())
+                .filter(i => i);
       req.body.recipeSteps = req.body.recipeSteps// split recipe steps by line breaks
                 .split(/\r?\n/)   
                 .map(s => s.trim())
